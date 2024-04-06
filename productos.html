@@ -1,1 +1,51 @@
-#daniel
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Productos</title>
+<link rel="stylesheet" href="styles.css"> <!-- Enlazar archivo de estilos CSS -->
+</head>
+<body>
+
+<h1>Catálogo de Productos</h1>
+
+<div id="productos">
+  <!-- Aquí se mostrarán los productos -->
+</div>
+
+<button onclick="mostrarFormulario()">Agregar Producto</button>
+
+<div id="formulario" style="display: none;">
+  <h2>Agregar Nuevo Producto</h2>
+  <form id="formularioAgregar">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="categoria">Categoría:</label>
+    <input type="text" id="categoria" name="categoria"><br><br>
+
+    <label for="descripcion">Descripción:</label><br>
+    <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea><br><br>
+
+    <label for="precio">Precio:</label>
+    <input type="number" id="precio" name="precio" min="0" step="0.01" required><br><br>
+
+    <label for="descuentoSubscriptores">Descuento para Subscriptores (%):</label>
+    <input type="number" id="descuentoSubscriptores" name="descuentoSubscriptores" min="0" max="100" step="0.01" value="5"><br><br>
+
+    <label for="descuentoOferta">Descuento para Oferta del Producto (%):</label>
+    <input type="number" id="descuentoOferta" name="descuentoOferta" min="0" max="100" step="0.01" value="0"><br><br>
+
+    <label for="imagen">URL de Imagen:</label>
+    <input type="text" id="imagen" name="imagen"><br><br>
+
+    <input type="submit" value="Agregar Producto">
+  </form>
+</div>
+<button onclick="buscarProductos()">Buscar Productos</button>
+<input type="text" id="inputBusqueda" placeholder="Buscar productos...">
+
+<script src="productos.js"></script> <!-- Enlazar archivo de scripts JavaScript -->
+</body>
+</html>

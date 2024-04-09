@@ -1,1 +1,27 @@
-#daniel
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de de datos</title>
+    <link rel="stylesheet" href="css/misdatos.css"> <!-- Se enlaza al css de datos para que tome estilo -->
+    <style>
+    </style>
+</head>
+<body>
+    <h1>Registro de datos</h1>
+    <form id="registrationForm" action="/actualizar_cliente" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion">
+        <input type="submit" value="Actualizar Información">
+    </form>
+</body>
+</html>

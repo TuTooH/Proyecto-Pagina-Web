@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingreso de Datos</title>
-    <link rel="stylesheet" href="css/misdatos.css"> <!-- Se enlaza al css de datos para que tome estilo -->
-    <style>
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Registro de datos</h1>
-    <form id="registrationForm" action="/actualizar_cliente" method="POST">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono">
-        <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion">
-        <input type="submit" value="Actualizar Información">
-    </form>
-    <script src="misdatos.js"></script>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Registro de datos</h1>
+        <form id="registrationForm" action="/actualizar_cliente" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="   " required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" value="   " required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" value="    " required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" value="   ">
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" value=" ">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Actualizar Información</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-<!-- El script todavia no lee de forma correcta para que el boton funcione --> 

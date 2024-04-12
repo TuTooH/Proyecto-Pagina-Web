@@ -1,1 +1,59 @@
-#daniel
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boletas del Cliente</title>
+<style>
+    /* Estilo de css */
+</style>
+</head>
+<body>
+
+<h1>Boletas del Cliente</h1>
+
+<div id="boletas">
+    <!-- Aquí se mostrarán las boletas del cliente -->
+</div>
+
+<script>
+// Datos de ejemplo para las boletas del cliente
+var boletas = [
+    { numero: 1, fechaVenta: "2024-04-01", fechaDespacho: "2024-04-02", fechaEntrega: "2024-04-03", montoTotal: 100, estado: "ENTREGADO" },
+    { numero: 2, fechaVenta: "2024-04-05", fechaDespacho: "2024-04-06", fechaEntrega: "2024-04-07", montoTotal: 150, estado: "DESPACHADO" },
+    // Agrega más objetos para más boletas...
+];
+
+// Función para mostrar las boletas del cliente
+function mostrarBoletas() {
+    var boletasHTML = '';
+
+    boletas.forEach(function(boleta) {
+        boletasHTML += `
+            <div class="boleta">
+                <p>Número de Boleta: ${boleta.numero}</p>
+                <p>Fecha de Venta: ${boleta.fechaVenta}</p>
+                <p>Fecha de Despacho: ${boleta.fechaDespacho}</p>
+                <p>Fecha de Entrega: ${boleta.fechaEntrega}</p>
+                <p>Monto Total: $${boleta.montoTotal}</p>
+                <p>Estado Actual: ${boleta.estado}</p>
+                <button onclick="verDetalle(${boleta.numero})">Ver Detalle</button>
+            </div>
+        `;
+    });
+
+    document.getElementById('boletas').innerHTML = boletasHTML;
+}
+
+// Función para ver el detalle de una boleta
+function verDetalle(numeroBoleta) {
+    // Aquí puedes implementar la lógica para ver el detalle de una boleta
+    console.log("Ver detalle de la boleta número:", numeroBoleta);
+}
+
+// Mostrar las boletas del cliente al cargar la página
+mostrarBoletas();
+</script>
+
+</body>
+</html>

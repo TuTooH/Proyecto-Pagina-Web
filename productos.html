@@ -4,48 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catálogo de Productos</title>
-<link rel="stylesheet" href="styles.css"> <!-- Enlazar archivo de estilos CSS -->
+<style>
+    body {
+        background-image: url('img/backgroung.jpg'); /* Pueden reemplazar la imagen con cualquiera que encuentren mejor */
+        background-size: cover; /* Esto asegura que la imagen se ajuste al cuerpo de la pag */
+        background-position: center; /* Esto es para centrar la imagen */
+        background-repeat: no-repeat; /* Esto es para que la imagen no se repita */
+        height: 100vh; /* Esto es para que la imagen cubra todo el cuerpo de lo que es la ventana */
+        margin: 0; /* Para eliminar el margen que tiene predeterminado el cuerpo de la pag */
+        padding: 0; /* Esto es para eliminar el relleno predeterminado que tiene el cuerpo de la ventana */
+    }
+    .container {
+        padding: 20px; /* Esto evita que se rellene de forma alocada el fondo para que sea vea mejor. */
+    }
+
+</style>
 </head>
 <body>
 
-<h1>Catálogo de Productos</h1>
+<div class="container">
+    <h1 class="text-center">Catálogo de Productos</h1>
 
-<div id="productos">
-  <!-- Aquí se mostrarán los productos -->
+    <div id="productos">
+        <!-- Aquí se mostrarán los productos -->
+    </div>
+
+    <button class="btn btn-primary" onclick="mostrarFormulario()">Agregar Producto</button>
+
+    <div id="formulario" style="display: none;">
+        <h2>Agregar Nuevo Producto</h2>
+        <form id="formularioAgregar">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <input type="text" class="form-control" id="categoria" name="categoria">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="4" cols="50"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" class="form-control" id="precio" name="precio" min="0" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="descuentoSubscriptores">Descuento para Subscriptores (%):</label>
+                <input type="number" class="form-control" id="descuentoSubscriptores" name="descuentoSubscriptores" min="0" max="100" step="0.01" value="5">
+            </div>
+            <div class="form-group">
+                <label for="descuentoOferta">Descuento para Oferta del Producto (%):</label>
+                <input type="number" class="form-control" id="descuentoOferta" name="descuentoOferta" min="0" max="100" step="0.01" value="0">
+            </div>
+            <div class="form-group">
+                <label for="imagen">URL de Imagen:</label>
+                <input type="text" class="form-control" id="imagen" name="imagen">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Agregar Producto">
+        </form>
+    </div>
+    <button class="btn btn-primary" onclick="buscarProductos()">Buscar Productos</button>
+    <input type="text" class="form-control" id="inputBusqueda" placeholder="Buscar productos...">
 </div>
 
-<button onclick="mostrarFormulario()">Agregar Producto</button>
-
-<div id="formulario" style="display: none;">
-  <h2>Agregar Nuevo Producto</h2>
-  <form id="formularioAgregar">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required><br><br>
-
-    <label for="categoria">Categoría:</label>
-    <input type="text" id="categoria" name="categoria"><br><br>
-
-    <label for="descripcion">Descripción:</label><br>
-    <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea><br><br>
-
-    <label for="precio">Precio:</label>
-    <input type="number" id="precio" name="precio" min="0" step="0.01" required><br><br>
-
-    <label for="descuentoSubscriptores">Descuento para Subscriptores (%):</label>
-    <input type="number" id="descuentoSubscriptores" name="descuentoSubscriptores" min="0" max="100" step="0.01" value="5"><br><br>
-
-    <label for="descuentoOferta">Descuento para Oferta del Producto (%):</label>
-    <input type="number" id="descuentoOferta" name="descuentoOferta" min="0" max="100" step="0.01" value="0"><br><br>
-
-    <label for="imagen">URL de Imagen:</label>
-    <input type="text" id="imagen" name="imagen"><br><br>
-
-    <input type="submit" value="Agregar Producto">
-  </form>
-</div>
-<button onclick="buscarProductos()">Buscar Productos</button>
-<input type="text" id="inputBusqueda" placeholder="Buscar productos...">
-
-<script src="productos.js"></script> <!-- Enlazar archivo de scripts JavaScript -->
+<script src="js/productos.js"></script> <!-- Enlazar archivo de scripts JavaScript -->
 </body>
 </html>

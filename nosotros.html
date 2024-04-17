@@ -51,6 +51,7 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         margin: 1rem;
         transition: transform 0.3s;
+        position: relative; /* Nueva línea */
     }
 
     .card:hover {
@@ -58,8 +59,8 @@
     }
 
     .card img {
-        width: 100%;
-        height: 200px;
+        width: 55%;
+        height: 40%;
         object-fit: cover;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -79,8 +80,81 @@
         font-size: 1.1rem;
         margin-bottom: 1rem;
     }
+
+    .contact-button { /* Nueva clase */
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .card {
+        width: 450px; /* Aumentamos el ancho un 50% */
+        height: 600px; /* Aumentamos la altura un 50% */
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 1rem;
+        transition: transform 0.3s;
+        position: relative;
+    }
+    footer {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 20px;
+        background-color: rgb(3, 200, 10);
+      }
 </style>
 <body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">TutoShop</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"target="_blank">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="administracion.html"target="_blank">administracion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="carrito.html"target="_blank">Carrito</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="miscompras.html"target="_blank">Mis compras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="registro.html"target="_blank">Registro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="misdatos.html"target="_blank">Mis Datos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="productos.html"target="_blank">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="ropa.html"target="_blank">Ropa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="usuarios.html"target="_blank">Usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="boleta.html"target="_blank">Boleta</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="nosotros.html"target="_blank">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="ingresar.html"target="_blank">Ingresar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
 <h1>Nosotros</h1>
 <div class="container">
@@ -95,7 +169,12 @@
         <div class="card-body">
             <h5 class="card-title">Rodrigo Riveros</h5>
             <p class="card-text">Dueño de Tutoshop</p>
-            
+            <p class="card-text overflow-auto" style="max-height: 180px;">Rodrigo Riveros es un apasionado de los videojuegos desde una edad temprana.
+               Con una visión audaz y un espíritu emprendedor, fundó Tutoshop con el objetivo de crear un espacio donde los jugadores
+                pudieran encontrar todo lo que necesitan para alimentar su pasión. Fuera de su trabajo como empresario,
+                 Rodrigo disfruta explorando nuevos títulos y participando en la comunidad gamer.
+            </p>
+            <button class="btn btn-primary contact-button" onclick="window.location.href='mailto:rodr.riveros@duocuc.cl'">Contactar</button> <!-- Nuevo botón y acción -->
         </div>
     </div>
     <div class="card">
@@ -103,17 +182,34 @@
         <div class="card-body">
             <h5 class="card-title">Patricio Gonzalez</h5>
             <p class="card-text">CEO</p>
+            <p class="card-text overflow-auto" style="max-height: 180px;">
+              Patricio González es un líder visionario con una profunda comprensión del mercado de los videojuegos.
+               Como CEO de Tutoshop, Patricio se ha dedicado a expandir el alcance de la tienda y garantizar
+                que cada cliente tenga una experiencia excepcional. Con su enfoque estratégico y su compromiso con la excelencia, ha llevado a Tutoshop a nuevas alturas en el mundo del gaming.
+            </p>
+            <button class="btn btn-primary contact-button" onclick="window.location.href='mailto:pata.gonzalez@duocuc.cl'">Contactar</button> <!-- Nuevo botón y acción -->
         </div>
     </div>
     <div class="card">
         <img src="img/images.jpeg" alt="...">
         <div class="card-body">
             <h5 class="card-title">Daniel</h5>
-            <p class="card-text">Comunity manager</p>
+            <p class="card-text">Community manager</p>
+            <p class="card-text overflow-auto" style="max-height: 180px;">Daniel es el corazón de la comunidad de Tutoshop. Con una personalidad
+               extrovertida y una pasión por conectar con los jugadores, se dedica a cultivar relaciones sólidas
+                con los clientes y a garantizar que cada miembro se sienta valorado y escuchado. Ya sea organizando
+                 eventos en línea o interactuando en las redes sociales, Daniel siempre está buscando formas de enriquecer 
+                 la experiencia de los jugadores en Tutoshop.
+                </p>
+            <button class="btn btn-primary contact-button" onclick="window.location.href='mailto:daniel@example.com'">Contactar</button> <!-- Nuevo botón y acción -->
         </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLeSaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<footer>
+  <p>WhatsApp +56 95266 2566 - Facebook - Instagram - Moneda 627, Santiago</p>
+</footer>  
+
 </body>
-</html>
+</html> 

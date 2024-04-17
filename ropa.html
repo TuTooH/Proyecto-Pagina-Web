@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/ropa.css">
   <title>Tienda</title>
   <style>
@@ -11,7 +12,11 @@
       text-align: center;
       padding: 20px;
       background-color: rgb(3, 200, 10);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
+  </style>
 
   </style>
 </head>
@@ -70,70 +75,65 @@
     <h2>Por compras superiores a $20000 en productos ya estas participando</h2>
 </div>
 <table>
-    <tr>
-        <td>
-            <a href="ficha.html"><img width="200px" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BGHZ_STG/on/demandware.static/-/Sites-master-catalog-tricot/default/dw6aa03b14/images/large/PD610437.jpg?sw=400&sh=400&sm=fit" alt=""></a>
-            <h3>Boxer Masculinos</h3>
-            <div>
-                Precio: $10.000
+    <div class="container-fluid">
+      <div class="row" style="border: 3px solid green;">
+
+          <div class="card" style="width: 19rem;">
+              <img src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BGHZ_STG/on/demandware.static/-/Sites-master-catalog-tricot/default/dw6aa03b14/images/large/PD610437.jpg?sw=400&sh=400&sm=fit" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Boxer Masculinos</h5>
+                <p class="card-text"> Color negro
+              </p>
+              <p><strong>Precio: <span style="font-size: larger;">$10.000</span></strong></p>
+              </div>
             </div>
-            <div>
-                Color negro
+            <div class="card" style="width: 20rem;">
+              <img src="https://tworldstore.cl/3148-zoom/polera-polo-m-c-100-algodon-170g-certificada-blanco-t-xs.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Polera</h5>
+                <p class="card-text">Polera Roja
+                  </p>
+                  <p><strong>Precio: <span style="font-size: larger;">$10.000</span></strong></p>
+              </div>
             </div>
-        </td>
-        <td>
-            <a href="ficha.html"><img width="200px" src="https://tworldstore.cl/3148-zoom/polera-polo-m-c-100-algodon-170g-certificada-blanco-t-xs.jpg" alt=""></a>
-            <h3>Polera</h3>
-            <div>
-                Precio: $20.000
+            <div class="card" style="width: 20rem;">
+              <img src="https://i.pinimg.com/originals/ef/43/96/ef4396fc8ebd9735ac0dee6d2faf108c.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Polera</h5>
+                <p class="card-text">Polera Pokemon
+                  </p>
+                  <p><strong>Precio: <span style="font-size: larger;">$10.000</span></strong></p>
+              </div>
             </div>
-            <div>
-                Color Rojo
+            <div class="card" style="width: 20rem;">
+              <img src="https://dementez.cl/wp-content/uploads/2022/01/front_polera_pokemon.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Polera</h5>
+                <p class="card-text">Polera Pokemon
+                </p>
+                <p><strong>Precio: <span style="font-size: larger;">$10.000</span></strong></p>
+              </div>
             </div>
-        </td>
-        <td>
-            <a href="ficha.html"><img width="200px" src="https://i.pinimg.com/originals/ef/43/96/ef4396fc8ebd9735ac0dee6d2faf108c.jpg" alt=""></a>
-            <h3>Pantalones</h3>
-            <div>
-                Precio: $10.000
+            <div class="card" style="width: 19rem;">
+              <img src="https://http2.mlstatic.com/D_NQ_NP_884324-MLC47668556747_092021-W.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Polera</h5>
+                <p class="card-text">Polera Naruto
+                </p>
+                    <p><strong>Precio: <span style="font-size: larger;">$10.000</span></strong></p>
+              </div>
             </div>
-            <div>
-                Polera Pokemon
+            <div class="card" style="width: 19rem;">
+              <img src="https://www.estampandoarte.cl/images/stories/virtuemart/product/polera-minecraft-2.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Polera</h5>
+                <p class="card-text">Polera Minecraft
+                  </p>
+                  <p><strong>Precio: <span style="font-size: larger;">$10.000</span></strong></p>
+              </div>
             </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="ficha.html"><img width="200px" src="https://dementez.cl/wp-content/uploads/2022/01/front_polera_pokemon.png" alt=""></a>
-            <h3>Polera</h3>
-            <div>
-                Precio: $10.000
-            </div>
-            <div>
-                Polera Pokemon
-            </div>
-        </td>
-        <td>
-            <a href="ficha.html"><img width="200px" src="https://http2.mlstatic.com/D_NQ_NP_884324-MLC47668556747_092021-W.jpg" alt=""></a>
-            <h3>Polera</h3>
-            <div>
-                Precio: $10.000
-            </div>
-            <div>
-                polera Naruto
-            </div>
-        </td>
-        <td>
-            <a href="ficha.html"><img width="200px" src="https://www.estampandoarte.cl/images/stories/virtuemart/product/polera-minecraft-2.jpg" alt=""></a>
-            <h3>Polera</h3>
-            <div>
-                Precio: $10.000
-            </div>
-            <div>
-                Polera Minecraft 
-            </div>
-        </td>
-    </tr>
+      </div>
+  </div>
     </table>
   </table>
   <footer>

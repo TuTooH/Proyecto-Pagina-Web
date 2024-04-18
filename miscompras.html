@@ -1,70 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
-    <style>
-        footer {
-          color: rgb(255, 255, 255);
-          text-align: center;
-          padding: 20px;
-          background-color: rgb(3, 200, 10);
-        }
-      </style>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boletas del Cliente</title>
-<style>
-    /* Estilo de css */
-</style>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Mínimo 100% de la altura del viewport */
+        }
+
+        .container {
+            flex: 1; /* Para que ocupe todo el espacio disponible */
+        }
+
+          footer {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(3, 200, 10);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Compras anteriores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-
-<h1>Boletas del Cliente</h1>
-
-<div id="boletas">
-    <!-- Aquí se mostrarán las boletas del cliente -->
-</div>
-
-<script>
-// Datos de ejemplo para las boletas del cliente
-var boletas = [
-    { numero: 1, fechaVenta: "2024-04-01", fechaDespacho: "2024-04-02", fechaEntrega: "2024-04-03", montoTotal: 100, estado: "ENTREGADO" },
-    { numero: 2, fechaVenta: "2024-04-05", fechaDespacho: "2024-04-06", fechaEntrega: "2024-04-07", montoTotal: 150, estado: "DESPACHADO" },
-    // Agrega más objetos para más boletas...
-];
-
-// Función para mostrar las boletas del cliente
-function mostrarBoletas() {
-    var boletasHTML = '';
-
-    boletas.forEach(function(boleta) {
-        boletasHTML += `
-            <div class="boleta">
-                <p>Número de Boleta: ${boleta.numero}</p>
-                <p>Fecha de Venta: ${boleta.fechaVenta}</p>
-                <p>Fecha de Despacho: ${boleta.fechaDespacho}</p>
-                <p>Fecha de Entrega: ${boleta.fechaEntrega}</p>
-                <p>Monto Total: $${boleta.montoTotal}</p>
-                <p>Estado Actual: ${boleta.estado}</p>
-                <button onclick="verDetalle(${boleta.numero})">Ver Detalle</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Nombre de tu Tienda</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mis Datos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mis compras anteriores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cerrar Sesión</a>
+                    </li>
+                </ul>
             </div>
-        `;
-    });
+        </div>
+    </nav>
 
-    document.getElementById('boletas').innerHTML = boletasHTML;
-}
+    <div class="container mt-5">
+        <h1>Mis Compras Anteriores</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Número de boleta</th>
+                    <th>Fecha venta</th>
+                    <th>Fecha despacho</th>
+                    <th>Fecha entrega</th>
+                    <th>Monto Total</th>
+                    <th>Estado Actual</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
 
-// Función para ver el detalle de una boleta
-function verDetalle(numeroBoleta) {
-    // Aquí puedes implementar la lógica para ver el detalle de una boleta
-    console.log("Ver detalle de la boleta número:", numeroBoleta);
-}
-
-// Mostrar las boletas del cliente al cargar la página
-mostrarBoletas();
-</script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <footer>
     <p>WhatsApp +56 95266 2566 - Facebook - Instagram - Moneda 627, Santiago</p>
-</footer> 
+</footer>
 </body>
 </html>

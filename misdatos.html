@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Datos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Tienda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        footer {
-            color: rgb(255, 255, 255);
-            text-align: center;
-            padding: 2px;
-            background-color: rgb(3, 200, 10);
-        }
-
-        .card-photo {
-            max-width: 300px; /* Ancho máximo de la carta */
-            max-height: 300px; /* Alto máximo de la carta */
-        }
+      footer {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 2px;
+        background-color: rgb(3, 200, 10);
+      }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -31,10 +28,32 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="index.html"target="_blank">Inicio</a>
               </li>
-
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="administracion.html"target="_blank">administracion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="carrito.html"target="_blank">Carrito</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="miscompras.html"target="_blank">Mis compras</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="registro.html"target="_blank">Registro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="misdatos.html"target="_blank">Mis Datos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="productos.html"target="_blank">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="ropa.html"target="_blank">Ropa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="usuarios.html"target="_blank">Usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="boleta.html"target="_blank">Boleta</a>
               </li>
               
               <li class="nav-item">
@@ -47,83 +66,161 @@
           </div>
         </div>
       </nav>
+    <div id="menu"></div>
+    
+    <h1>Mis Datos</h1>
+    
 
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Mis Datos</h1>
-        <div class="row">
-            <div class="col-md-6 offset-md-6">
-                <div class="card card-photo border rounded mb-3">
-                    <img src="" id="fotoPreview" alt="Foto" class="card-img-top img-fluid">
-                    <div class="card-body">
-                        <input type="file" id="foto" name="foto" class="d-none">
-                        <label for="foto" class="btn btn-primary m-2">Examinar</label>
+    <form class="row g-3 needs-validation" novalidate style="margin-top: 20px;">
+        <div class="container-fluid">
+            <div class="row justify">
+                <!-- Campos del formulario -->
+                <div class="col-sm-12 col-md-4">
+                    <!-- Campo RUT -->
+                    <div class="mb-3" style="margin-bottom: 20px;">
+                        <label for="rut" class="form-label">RUT</label>
+                        <input required placeholder="Ej: 11123123-K" 
+                            type="text" class="form-control" 
+                            id="rut" name="rut" aria-describedby="rutHelp">
+                        <div id="rutHelp" class="form-text">
+                            Escribe el RUT sin puntos y con guión.
+                        </div>
+                        <div class="invalid-feedback">
+                            El campo RUT es obligatorio
+                        </div>
+                    </div>
+                </div>
+                    <!-- Campo Nombre -->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input required placeholder="Ej: Juan" 
+                            type="text" class="form-control" 
+                            id="nombre" name="nombre" aria-describedby="nombreHelp">
+                        <div id="nombreHelp" class="form-text">
+                            Escribe tu nombre.
+                        </div>
+                        <div class="invalid-feedback">
+                            El campo Nombre es obligatorio
+                        </div>
+                    </div>
+
+                    <!-- Campo Apellido -->
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input required placeholder="Ej: González" 
+                            type="text" class="form-control" 
+                            id="apellido" name="apellido" aria-describedby="apellidoHelp">
+                        <div id="apellidoHelp" class="form-text">
+                            Escribe tu apellido.
+                        </div>
+                        <div class="invalid-feedback">
+                            El campo Apellido es obligatorio
+                        </div>
+                    </div>
+
+                    <!-- Campo Correo -->
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input required placeholder="Ej: jgonzalez@gmail.com" 
+                            type="email" class="form-control" 
+                            id="correo" name="correo" aria-describedby="correoHelp">
+                        <div id="correoHelp" class="form-text">
+                            Escribe tu correo.
+                        </div>
+                        <div class="invalid-feedback">
+                            El campo Correo es obligatorio
+                        </div>
+                    </div>
+
+                    <!-- Campo Dirección -->
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <textarea required placeholder="Ej: Calle San Pedro 425, La Florida" 
+                            class="form-control" rows="3"
+                            id="direccion" name="direccion" aria-describedby="direccionHelp"></textarea>
+                        <div id="direccionHelp" class="form-text">
+                            Escribe tu dirección.
+                        </div>
+                        <div class="invalid-feedback">
+                            El campo Dirección es obligatorio
+                        </div>
+                    </div>
+
+                    <!-- Campo Subscrito -->
+                    <div class="mb-3">
+                        <label for="subscrito" class="form-label">Con subscripción</label>
+                        <input type="checkbox" id="subscrito" name="subscrito">
+                        <div id="subscritoHelp" class="form-text">
+                            Deseo subscribirme con un aporte de $5.000 mensuales
+                            y obtener un 5% de descuento en mis compras.
+                        </div>
+                    </div>
+
+                    <!-- Campo Contraseña -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" required placeholder="Escribe aquí tu contraseña" 
+                            class="form-control"
+                            id="password" name="password" aria-describedby="passwordHelp">
+                        <div id="passwordHelp" class="form-text">
+                            La contraseña debe tener un número, un símbolo, 
+                            letras mayúsculas y minúsculas, y además debe
+                            tener al menos 8 caracteres.
+                        </div>
+                        <div class="invalid-feedback">
+                            El campo password es obligatorio
+                        </div>
+                    </div>
+
+                    <!-- Campo Repetir Contraseña -->
+                    <div class="mb-3">
+                        <label for="password2" class="form-label">Repetir contraseña</label>
+                        <input type="password" required placeholder="Repite aquí tu contraseña" 
+                            class="form-control"
+                            id="password2" name="password2" aria-describedby="password2Help">
+                        <div id="password2Help" class="form-text">
+                            La contraseña debe ser igual a la de arriba.
+                        </div>
+                        <div class="invalid-feedback">
+                            El campo Repetir Contraseña es obligatorio
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Foto de perfil -->
+                <div class="col-sm-12 col-md-4">
+                    <div class="mb-3">
+                        <label for="imagen" class="form-label">Imagen de Perfil</label>
+                        <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+                        <div id="imagenHelp" class="form-text">
+                            Seleccione una imagen de perfil.
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="reset" class="btn btn-primary">Limpiar</button>
                     </div>
                 </div>
             </div>
-        </div>
-        <form id="updateForm" action="/actualizar_datos" method="POST">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="apellido">Apellido:</label>
-                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email" required>
-            </div>
-            <div class="form-group">
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su teléfono">
-            </div>
-            <div class="form-group">
-                <label for="direccion">Dirección:</label>
-                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingrese su dirección">
-<body>
-    <div class="container py-4">
-                <form action="">
-
-                <div class="form-check">
-                    <label class="form-check-label" for="checkbox1">Si, Deseo Subscribirme para recibir ofertas.</label>
-                    <input class="form-check-input" type="checkbox1" name="" id="checkbox1">
-                </div>
-                </form>
-            </div>
-</body>
-                        <label for="Contraseña">Contraseña:</label>
-                        <input type="text" class="form-control" id="Contraseña" name="Contraseña" placeholder="Contraseña">
-                        <div class="form-group">
-                            <label for="Repetir Contraseña">Repetir Contraseña:</label>
-                            <input type="text" class="form-control" id="Repetir Contraseña" name="Repetir contraseña" placeholder="Repita Su contraseña">
-                        
-            <button type="submit" class="btn btn-primary btn-block">Guardar</button>
-            <button type="button" class="btn btn-secondary btn-block" onclick="limpiarFormulario()">Limpiar</button>
-        </form>
-    </body>
-    </div>
-
+        </div>  
+    </form>
     <footer>
         <p>WhatsApp +56 95266 2566 - Facebook - Instagram - Moneda 627, Santiago</p>
-    </footer>
+    </footer>  
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <script>
-        function limpiarFormulario() {
-            document.getElementById("updateForm").reset();
-            document.getElementById("fotoPreview").src = "";
-        }
-
-        document.getElementById("foto").addEventListener("change", function() {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById("fotoPreview").src = e.target.result;
-            }
-            reader.readAsDataURL(this.files[0]);
+        document.getElementById('imagen').addEventListener('change', function(event) {
+            const image = event.target.files[0];
+            const url = URL.createObjectURL(image);
+            const imgElement = document.createElement('img');
+            imgElement.src = url;
+            imgElement.className = 'registro_foto';
+            document.querySelector('.col-sm-12.col-md-4:last-of-type').appendChild(imgElement);
         });
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

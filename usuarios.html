@@ -91,11 +91,10 @@
           </select>
           <label for="image">Imagen:</label>
           <input type="file" id="image">
-            <input type="text" id="password" readonly value="abc123!">
-            <button type="button" onclick="this.previousElementSibling.value=generatePassword()">Generar contraseña</button>
-          </div>
+          <label for="password">Contraseña:</label>
+          <input type="text" id="password" readonly>
+          <button type="button" onclick="document.getElementById('password').value = generarContraseña(10);">Generar contraseña</button>
           <button type="submit">Guardar</button>
-          
         </form>
       </section>
       <section class="user-table">

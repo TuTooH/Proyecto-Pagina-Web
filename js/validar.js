@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!rutInput.value.trim()) {
             rutInput.classList.add('is-invalid');
             isValid = false;
-        } else {
+        } 
+        
+        else {
             rutInput.classList.remove('is-invalid');
         }
 

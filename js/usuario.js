@@ -46,6 +46,9 @@ $(document).ready(function() {
                 required: true,
                 emailCompleto: true
             },
+            direccion: {
+                required: true,
+            },
             password: {
                 required: true,
                 minlength: 5,
@@ -68,6 +71,9 @@ $(document).ready(function() {
             correo: {
                 required: "El correo es un campo requerido",
                 email: "El formato del correo no es válido"
+            },
+            direccion: {
+                required: "La dirección es un campo obligatorio",
             },
             password: {
                 required: "La contraseña es un campo requerido",

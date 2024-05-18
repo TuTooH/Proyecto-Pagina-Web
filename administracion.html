@@ -58,20 +58,42 @@
         <div class="row">
             <div class="col-12">
                 <ul class="list-group mt-3">
-                    <li class="list-group-item"><a href="#">Mantenedor de usuarios</a></li>
-                    <li class="list-group-item"><a href="#">Mantenedor de productos</a></li>
-                    <li class="list-group-item"><a href="#">Mantenedor de ventas</a></li>
-                    <li class="list-group-item"><a href="#">Mantenedor de bodega</a></li>
+                    <li class="list-group-item"><a href="usuarios.html">Mantenedor de usuarios</a></li>
+                    <li class="list-group-item"><a href="productos.html">Mantenedor de productos</a></li>
+                    <li class="list-group-item"><a href="ventas.html">Mantenedor de ventas</a></li>
+                    <li class="list-group-item"><a href="bodega.html">Mantenedor de bodega</a></li>
                 </ul>
             </div>
         </div>
     </div>
-
     <footer>
         <p>WhatsApp +56 95266 2566 - Facebook - Instagram - Moneda 627, Santiago</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    
+    <script src="js/admi.js"></script>
+    <script>
+      $(document).ready(function() {
+          $("form").validate();
+          $.validator.addMethod("validURL", function(value, element) {
+              return /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i.test(value);
+          }, "Ingrese una URL válida.");
+          $("li.list-group-item").each(function() {
+              $(this).click(function(e) {
+                  e.preventDefault(); 
+                  var href = $(this).find("a").attr("href");
+                  if ($(this).find("a").validURL()) {
+                      window.location.href = href;
+                  } else {
+                      alert("URL inválida.");
+                  }
+              });
+          });
+      });
+      </script>
 </body>
 </html>
 

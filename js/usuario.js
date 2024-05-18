@@ -19,18 +19,15 @@ $(document).ready(function() {
         return dv === dvCalculado;
     }, "El RUT no es válido (escriba sin puntos y con guión)");
 
-    // Agregar método de validación para correo
-    $.validator.addMethod("emailCompleto", function(value, element) {
+    $.validator.addMethod("email", function(value, element) {
         var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,}))$/;
         return regex.test(value);
-    }, 'El formato del correo no es válido');
+    }, 'El correo es un campo requerido');
 
-    // Agregar método de validación para que un campo sólo acepte letras y espacios en blanco
     $.validator.addMethod("soloLetras", function(value, element) {
         return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
     }, "Sólo se permiten letras y espacios en blanco.");
 
-    // Validar formulario con JQuery
     $("#formulario-registro").validate({
         rules: {
             rut: {
@@ -70,7 +67,7 @@ $(document).ready(function() {
             },
             correo: {
                 required: "El correo es un campo requerido",
-                emailCompleto: "El formato del correo no es válido"
+                email: "El formato del correo no es válido"
             },
             password: {
                 required: "La contraseña es un campo requerido",
@@ -80,12 +77,10 @@ $(document).ready(function() {
         }
     });
 
-    // El siguiente Javascript obliga a que la caja de texto del rut, siempre escriba la letra "K" en mayúscula
     document.getElementById('rut').addEventListener('keyup', function(e) {
         e.target.value = e.target.value.toUpperCase();
     });
 
-    // Generar una contraseña aleatoria y asignarla al campo de contraseña
     $("#generar-contraseña").click(function() {
         var password = Math.random().toString(36).slice(-10);
         $("#password").val(password);

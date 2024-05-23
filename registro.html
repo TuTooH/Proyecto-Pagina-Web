@@ -73,9 +73,9 @@
 
     <form class="row g-3 needs-validation" novalidate style="margin-top: 20px;">
         <div class="container-fluid">
-            <div class="row justify">
+            <div class="row">
                 <!-- Campos del formulario -->
-                <div class="col-sm-12 col-md-4">
+                <div  class="col-sm-6">
                     <!-- Campo RUT -->
                     <div class="mb-3" style="margin-bottom: 20px;">
                         <label for="rut" class="form-label">RUT</label>
@@ -89,7 +89,7 @@
                             El campo RUT es obligatorio
                         </div>
                     </div>
-                </div>
+                
                     <!-- Campo Nombre -->
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
@@ -189,18 +189,23 @@
                 </div>
 
                 <!-- Foto de perfil -->
-                <div class="col-sm-12 col-md-4">
+                <div  class="col-sm-6">
                     <div class="mb-3">
-                        <label for="imagen" class="form-label">Imagen de Perfil</label>
+                        <div id="foto-cliente">
+
+                        </div>
                         <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
                         <div id="imagenHelp" class="form-text">
                             Seleccione una imagen de perfil.
                         </div>
                     </div>
-                    <div class="col text-center">
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                        <button type="reset" class="btn btn-primary">Limpiar</button>
-                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="reset" class="btn btn-primary">Limpiar</button>
                 </div>
             </div>
         </div>  
@@ -217,7 +222,7 @@
             const imgElement = document.createElement('img');
             imgElement.src = url;
             imgElement.className = 'registro_foto';
-            document.querySelector('.col-sm-12.col-md-4:last-of-type').appendChild(imgElement);
+            document.getElementById('foto-cliente').appendChild(imgElement);
         });
     </script>
     

@@ -19,7 +19,7 @@ $(document).ready(function() {
         return dv === dvCalculado;
     }, "El RUT no es válido (escriba sin puntos y con guión)");
 
-    $.validator.addMethod("email", function(value, element) {
+    $.validator.addMethod("emailCompleto", function(value, element) {
         var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,}))$/;
         return regex.test(value);
     }, 'El correo es un campo requerido');
@@ -70,7 +70,7 @@ $(document).ready(function() {
             },
             correo: {
                 required: "El correo es un campo requerido",
-                email: "El formato del correo no es válido"
+                emailCompleto: "El formato del correo no es válido"
             },
             direccion: {
                 required: "La dirección es un campo obligatorio",

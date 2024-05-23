@@ -146,3 +146,10 @@
   .password-generator button:hover {
     background-color: #444;
   }
+
+  .invalid-feedback,.error{
+    color:red;
+    font-weight: bolder;
+
+
+  }

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             event.stopPropagation();
         } else {
-            if (!validateRut() || !validateEmail() || !validatePassword()) {
+            if (!validateRut() || !validateEmail() || !validatePassword() || !validateName() || !validateSurname()) {
                 event.preventDefault();
                 event.stopPropagation();
             }
@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         } else {
             document.getElementById("rut").classList.remove("is-invalid");
-            document.getElementById("rut").classList.add("is-valid");
             return true;
         }
     }
@@ -66,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         } else {
             document.getElementById("correo").classList.remove("is-invalid");
-            document.getElementById("correo").classList.add("is-valid");
             return true;
         }
     }
@@ -84,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         } else {
             document.getElementById("password").classList.remove("is-invalid");
-            document.getElementById("password").classList.add("is-valid");
         }
 
         if (!passwordsMatch) {
@@ -93,10 +90,39 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         } else {
             document.getElementById("password2").classList.remove("is-invalid");
-            document.getElementById("password2").classList.add("is-valid");
         }
 
         return true;
+    }
+
+    function validateName() {
+        const name = document.getElementById("nombre").value;
+        const nameRegex = /^[a-zA-Z\s]*$/;
+        const isValid = nameRegex.test(name);
+
+        if (!isValid) {
+            document.getElementById("nombre").classList.remove("is-valid");
+            document.getElementById("nombre").classList.add("is-invalid");
+            return false;
+        } else {
+            document.getElementById("nombre").classList.remove("is-invalid");
+            return true;
+        }
+    }
+
+    function validateSurname() {
+        const surname = document.getElementById("apellido").value;
+        const surnameRegex = /^[a-zA-Z\s]*$/;
+        const isValid = surnameRegex.test(surname);
+
+        if (!isValid) {
+            document.getElementById("apellido").classList.remove("is-valid");
+            document.getElementById("apellido").classList.add("is-invalid");
+            return false;
+        } else {
+            document.getElementById("apellido").classList.remove("is-invalid");
+            return true;
+        }
     }
 
     document.getElementById("rut").addEventListener("input", function() {
@@ -113,5 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("password2").addEventListener("input", function() {
         if (this.value.length >= 8) validatePassword();
+    });
+
+    document.getElementById("nombre").addEventListener("input", function() {
+        validateName();
+    });
+
+    document.getElementById("apellido").addEventListener("input", function() {
+        validateSurname();
     });
 });

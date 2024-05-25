@@ -1,151 +1,126 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form.needs-validation");
+$(document).ready(function () {
 
-    form.addEventListener("submit", function (event) {
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            if (!validateRut() || !validateEmail() || !validatePassword() || !validateName() || !validateSurname()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-        }
-
-        form.classList.add("was-validated");
-    });
-
-    function validateRut() {
-        const rut = document.getElementById("rut").value;
-        const rutRegex = /^[0-9]+-[0-9Kk]$/;
-        const isValidFormat = rutRegex.test(rut);
-        const [number, verifier] = rut.split('-');
-
-        if (!isValidFormat) {
-            document.getElementById("rut").classList.remove("is-valid");
-            document.getElementById("rut").classList.add("is-invalid");
+    $.validator.addMethod("rutChilenoNuevo", function (value, element) {
+        var rutPattern = /^\d{7,8}-[\dKk]$/;
+        if (!rutPattern.test(value)) {
             return false;
         }
-
-        const isValidRut = verifyRut(number, verifier);
-
-        if (!isValidRut) {
-            document.getElementById("rut").classList.remove("is-valid");
-            document.getElementById("rut").classList.add("is-invalid");
-            return false;
-        } else {
-            document.getElementById("rut").classList.remove("is-invalid");
-            return true;
-        }
-    }
-
-    function verifyRut(number, verifier) {
-        let sum = 0;
-        let mul = 2;
-
-        for (let i = number.length - 1; i >= 0; i--) {
-            sum += number[i] * mul;
-            mul = mul === 7 ? 2 : mul + 1;
-        }
-
-        const mod = sum % 11;
-        const computedVerifier = mod === 0 ? '0' : mod === 1 ? 'K' : (11 - mod).toString();
-
-        return verifier.toUpperCase() === computedVerifier;
-    }
-
-    function validateEmail() {
-        const email = document.getElementById("correo").value;
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const isValid = emailRegex.test(email);
-
-        if (!isValid) {
-            document.getElementById("correo").classList.remove("is-valid");
-            document.getElementById("correo").classList.add("is-invalid");
-            return false;
-        } else {
-            document.getElementById("correo").classList.remove("is-invalid");
-            return true;
-        }
-    }
-
-    function validatePassword() {
-        const password = document.getElementById("password").value;
-        const password2 = document.getElementById("password2").value;
-        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
-        const isValidPassword = passwordRegex.test(password);
-        const passwordsMatch = password === password2;
-
-        if (!isValidPassword) {
-            document.getElementById("password").classList.remove("is-valid");
-            document.getElementById("password").classList.add("is-invalid");
-            return false;
-        } else {
-            document.getElementById("password").classList.remove("is-invalid");
-        }
-
-        if (!passwordsMatch) {
-            document.getElementById("password2").classList.remove("is-valid");
-            document.getElementById("password2").classList.add("is-invalid");
-            return false;
-        } else {
-            document.getElementById("password2").classList.remove("is-invalid");
-        }
-
+        var rutParts = value.split("-");
+        var dv = rutParts[1].toUpperCase();
+        $("#rut").val(rutParts[0] + "-" + dv); 
         return true;
-    }
+    }, "El RUT no es válido (escriba sin puntos y con guión)");
 
-    function validateName() {
-        const name = document.getElementById("nombre").value;
-        const nameRegex = /^[a-zA-Z\s]*$/;
-        const isValid = nameRegex.test(name);
+    $.validator.addMethod("emailCompletoNuevo", function (value, element) {
+        var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,}))$/;
+        return regex.test(value);
+    }, 'El correo es un campo requerido');
 
-        if (!isValid) {
-            document.getElementById("nombre").classList.remove("is-valid");
-            document.getElementById("nombre").classList.add("is-invalid");
-            return false;
-        } else {
-            document.getElementById("nombre").classList.remove("is-invalid");
-            return true;
+    $.validator.addMethod("soloLetrasSinEspaciosNuevo", function (value, element) {
+        return this.optional(element) || /^[a-zA-Z]*$/.test(value);
+    }, "Sólo se permiten letras sin espacios en blanco.");
+
+    $("#formulario-registro").validate({
+        rules: {
+            rut: {
+                required: true,
+                rutChilenoNuevo: true
+            },
+            nombre: {
+                required: true,
+                soloLetrasSinEspaciosNuevo: true
+            },
+            apellido: {
+                required: true,
+                soloLetrasSinEspaciosNuevo: true
+            },
+            correo: {
+                required: true,
+                emailCompletoNuevo: true
+            },
+            direccion: {
+                required: true
+            },
+            password: {
+                required: true,
+                minlength: 8,
+                maxlength: 15
+            },
+            password2: {
+                required: true,
+                equalTo: "#password"
+            }
+        },
+        messages: {
+            rut: {
+                required: "El RUT es un campo requerido",
+                rutChilenoNuevo: "El RUT no es válido (escriba sin puntos y con guión)"
+            },
+            nombre: {
+                required: "El nombre es un campo requerido",
+                soloLetrasSinEspaciosNuevo: "El nombre sólo puede contener letras sin espacios en blanco"
+            },
+            apellido: {
+                required: "El apellido es un campo requerido",
+                soloLetrasSinEspaciosNuevo: "El apellido sólo puede contener letras sin espacios en blanco"
+            },
+            correo: {
+                required: "El correo es un campo requerido",
+                emailCompletoNuevo: "El formato del correo no es válido"
+            },
+            direccion: {
+                required: "La dirección es un campo obligatorio"
+            },
+            password: {
+                required: "La contraseña es un campo requerido",
+                minlength: "La contraseña debe tener un mínimo de 8 caracteres",
+                maxlength: "La contraseña debe tener un máximo de 15 caracteres"
+            },
+            password2: {
+                required: "Debe confirmar la contraseña",
+                equalTo: "Las contraseñas no coinciden"
+            }
+        },
+        highlight: function (element) {
+            $(element).addClass("is-invalid").removeClass("is-valid");
+        },
+        unhighlight: function (element) {
+            $(element).addClass("is-valid").removeClass("is-invalid");
         }
-    }
+    });
 
-    function validateSurname() {
-        const surname = document.getElementById("apellido").value;
-        const surnameRegex = /^[a-zA-Z\s]*$/;
-        const isValid = surnameRegex.test(surname);
+    document.getElementById('rut').addEventListener('keyup', function (e) {
+        e.target.value = e.target.value.toUpperCase();
+    });
 
-        if (!isValid) {
-            document.getElementById("apellido").classList.remove("is-valid");
-            document.getElementById("apellido").classList.add("is-invalid");
-            return false;
-        } else {
-            document.getElementById("apellido").classList.remove("is-invalid");
-            return true;
+    $("#generar-contraseña").click(function () {
+        var password = Math.random().toString(36).slice(-10);
+        $("#password").val(password);
+    });
+
+    // Lógica para mostrar la imagen seleccionada
+    $("#imagen").on("change", function (event) {
+        const image = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const imgElement = document.createElement('img');
+            imgElement.src = e.target.result;
+            imgElement.className = 'registro_foto';
+            imgElement.style.maxWidth = '100%';
+            imgElement.style.height = 'auto';
+
+            $("#foto-cliente").html(imgElement);
+        };
+
+        if (image) {
+            reader.readAsDataURL(image);
         }
-    }
-
-    document.getElementById("rut").addEventListener("input", function() {
-        if (this.value.includes("-")) validateRut();
     });
 
-    document.getElementById("correo").addEventListener("input", function() {
-        if (this.value.includes("@") && this.value.includes(".")) validateEmail();
-    });
-
-    document.getElementById("password").addEventListener("input", function() {
-        if (this.value.length >= 8) validatePassword();
-    });
-
-    document.getElementById("password2").addEventListener("input", function() {
-        if (this.value.length >= 8) validatePassword();
-    });
-
-    document.getElementById("nombre").addEventListener("input", function() {
-        validateName();
-    });
-
-    document.getElementById("apellido").addEventListener("input", function() {
-        validateSurname();
+    // Lógica para limpiar la imagen al hacer clic en el botón "Limpiar"
+    $("button[type='reset']").click(function () {
+        $("#foto-cliente").empty();
+        $("#imagen").val('');
     });
 });

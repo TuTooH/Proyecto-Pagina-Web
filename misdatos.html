@@ -26,41 +26,40 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"target="_blank">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="index.html" target="_blank">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="administracion.html"target="_blank">administracion</a>
+                <a class="nav-link active" aria-current="page" href="administracion.html" target="_blank">Administracion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="carrito.html"target="_blank">Carrito</a>
+                <a class="nav-link active" aria-current="page" href="carrito.html" target="_blank">Carrito</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="miscompras.html"target="_blank">Mis compras</a>
+                <a class="nav-link active" aria-current="page" href="miscompras.html" target="_blank">Mis compras</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="registro.html"target="_blank">Registro</a>
+                <a class="nav-link active" aria-current="page" href="registro.html" target="_blank">Registro</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="misdatos.html"target="_blank">Mis Datos</a>
+                <a class="nav-link active" aria-current="page" href="misdatos.html" target="_blank">Mis Datos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="productos.html"target="_blank">Productos</a>
+                <a class="nav-link active" aria-current="page" href="productos.html" target="_blank">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="ropa.html"target="_blank">Ropa</a>
+                <a class="nav-link active" aria-current="page" href="ropa.html" target="_blank">Ropa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="usuarios.html"target="_blank">Usuarios</a>
+                <a class="nav-link active" aria-current="page" href="usuarios.html" target="_blank">Usuarios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="boleta.html"target="_blank">Boleta</a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="nosotros.html"target="_blank">Nosotros</a>
+                <a class="nav-link active" aria-current="page" href="boleta.html" target="_blank">Boleta</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="ingresar.html"target="_blank">Ingresar</a>
+                <a class="nav-link active" aria-current="page" href="nosotros.html" target="_blank">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="ingresar.html" target="_blank">Ingresar</a>
               </li>
             </ul>
           </div>
@@ -68,10 +67,9 @@
       </nav>
     <div id="menu"></div>
     
-    <h1>Mis datos</h1>
+    <h1>mis datos</h1>
     
-
-    <form class="row g-3 needs-validation" novalidate style="margin-top: 20px;">
+    <form id="formulario-registro" class="row g-3 needs-validation" novalidate style="margin-top: 20px;">
         <div class="container-fluid">
             <div class="row">
                 <!-- Campos del formulario -->
@@ -81,13 +79,8 @@
                         <label for="rut" class="form-label">RUT</label>
                         <input required placeholder="Ej: 11123123-K" 
                             type="text" class="form-control" 
-                            id="rut" name="rut" aria-describedby="rutHelp">
-                        <div id="rutHelp" class="form-text">
-                            Escribe el RUT sin puntos y con guión.
-                        </div>
-                        <div class="invalid-feedback">
-                            El campo RUT es obligatorio
-                        </div>
+                            id="rut" name="rut">
+
                     </div>
                 
                     <!-- Campo Nombre -->
@@ -95,13 +88,8 @@
                         <label for="nombre" class="form-label">Nombre</label>
                         <input required placeholder="Ej: Juan" 
                             type="text" class="form-control" 
-                            id="nombre" name="nombre" aria-describedby="nombreHelp">
-                        <div id="nombreHelp" class="form-text">
-                            Escribe tu nombre.
-                        </div>
-                        <div class="invalid-feedback">
-                            El campo Nombre es obligatorio
-                        </div>
+                            id="nombre" name="nombre">
+
                     </div>
 
                     <!-- Campo Apellido -->
@@ -109,13 +97,8 @@
                         <label for="apellido" class="form-label">Apellido</label>
                         <input required placeholder="Ej: González" 
                             type="text" class="form-control" 
-                            id="apellido" name="apellido" aria-describedby="apellidoHelp">
-                        <div id="apellidoHelp" class="form-text">
-                            Escribe tu apellido.
-                        </div>
-                        <div class="invalid-feedback">
-                            El campo Apellido es obligatorio
-                        </div>
+                            id="apellido" name="apellido">
+
                     </div>
 
                     <!-- Campo Correo -->
@@ -123,13 +106,8 @@
                         <label for="correo" class="form-label">Correo</label>
                         <input required placeholder="Ej: jgonzalez@gmail.com" 
                             type="email" class="form-control" 
-                            id="correo" name="correo" aria-describedby="correoHelp">
-                        <div id="correoHelp" class="form-text">
-                            Escribe tu correo.
-                        </div>
-                        <div class="invalid-feedback">
-                            El campo Correo es obligatorio
-                        </div>
+                            id="correo" name="correo">
+
                     </div>
 
                     <!-- Campo Dirección -->
@@ -137,13 +115,8 @@
                         <label for="direccion" class="form-label">Dirección</label>
                         <textarea required placeholder="Ej: Calle San Pedro 425, La Florida" 
                             class="form-control" rows="3"
-                            id="direccion" name="direccion" aria-describedby="direccionHelp"></textarea>
-                        <div id="direccionHelp" class="form-text">
-                            Escribe tu dirección.
-                        </div>
-                        <div class="invalid-feedback">
-                            El campo Dirección es obligatorio
-                        </div>
+                            id="direccion" name="direccion"></textarea>
+
                     </div>
 
                     <!-- Campo Subscrito -->
@@ -161,15 +134,8 @@
                         <label for="password" class="form-label">Contraseña</label>
                         <input type="password" required placeholder="Escribe aquí tu contraseña" 
                             class="form-control"
-                            id="password" name="password" aria-describedby="passwordHelp">
-                        <div id="passwordHelp" class="form-text">
-                            La contraseña debe tener un número, un símbolo, 
-                            letras mayúsculas y minúsculas, y además debe
-                            tener al menos 8 caracteres.
-                        </div>
-                        <div class="invalid-feedback">
-                            El campo password es obligatorio
-                        </div>
+                            id="password" name="password">
+
                     </div>
 
                     <!-- Campo Repetir Contraseña -->
@@ -177,29 +143,21 @@
                         <label for="password2" class="form-label">Repetir contraseña</label>
                         <input type="password" required placeholder="Repite aquí tu contraseña" 
                             class="form-control"
-                            id="password2" name="password2" aria-describedby="password2Help">
-                        <div id="password2Help" class="form-text">
-                            La contraseña debe ser igual a la de arriba.
-                        </div>
-                        <div class="invalid-feedback">
-                            El campo Repetir Contraseña es obligatorio
-                        </div>
+                            id="password2" name="password2">
+
                     </div>
 
                 </div>
 
                 <!-- Foto de perfil -->
-                <div  class="col-sm-6">
+                <div class="col-sm-6">
                     <div class="mb-3">
-                        <div id="foto-cliente">
-
-                        </div>
+                        <div id="foto-cliente"></div>
                         <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
                         <div id="imagenHelp" class="form-text">
                             Seleccione una imagen de perfil.
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="row">
@@ -214,20 +172,10 @@
         <p>WhatsApp +56 95266 2566 - Facebook - Instagram - Moneda 627, Santiago</p>
     </footer>  
 
-    
-    <script>
-        document.getElementById('imagen').addEventListener('change', function(event) {
-            const image = event.target.files[0];
-            const url = URL.createObjectURL(image);
-            const imgElement = document.createElement('img');
-            imgElement.src = url;
-            imgElement.className = 'registro_foto';
-            document.getElementById('foto-cliente').appendChild(imgElement);
-        });
-    </script>
-    
+    <!-- Incluir jQuery antes de validar.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <script src="js/validar.js"></script>
 </body>
 </html>
-

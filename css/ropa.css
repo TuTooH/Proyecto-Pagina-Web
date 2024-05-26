@@ -26,3 +26,11 @@
   width: 200px;
   margin: auto;
 }
+.full-width-title {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}

@@ -70,32 +70,39 @@
         </div>
       </div>
     </nav>
-    <div class="form-group">
-        <h1>Bodega</h1>
+    <form id="formulario-registro" class="form-group">
+      <h1>Bodega</h1>
+      <div>
         <label for="Categoria" class="font-weight-bold">Categoria:</label>
-        <select class="form-select" arial-label="Default select example">
-          <option selected>Seleccione una opción</option>
+        <select id="Categoria" class="form-select" aria-label="Default select example" name="Categoria">
+            <option value="" selected>Seleccione una opción</option>
             <option value="Juegos">Juegos</option>
             <option value="Peluches">Peluches</option>
-            <option value="funkos">Funkos</option>
+            <option value="Funkos">Funkos</option>
         </select>
+      </div>
+      <div>
         <label for="Nombre_c" class="font-weight-bold">Nombre:</label>
-        <select class="form-select" arial-label="Default select example">
-          <option selected>Seleccione una opción</option>
+        <select id="Nombre_c" class="form-select" aria-label="Default select example" name="Nombre_c">
+            <option value="" selected>Seleccione una opción</option>
             <option value="Juego">Helldivers 2</option>
-            <option value="peluche">Peluche Pokemon</option>
-            <option value="funkos">Funkos helldivers 2</option>
+            <option value="Peluche">Peluche Pokemon</option>
+            <option value="Funko">Funkos Helldivers 2</option>
         </select>
+      </div>
+      <div>
         <label for="Cantidad" class="font-weight-bold">Cantidad:</label>
-        <input type="number" id="Cantidad" class="form-control" placeholder="Ingrese un número">
-        <div class="mt-4">
-            <button type="submit" class="btn btn-primary">Agregar</button>
-            <button type="submit" class="btn btn-primary">Nuevo</button>
-        </div>
+        <input type="number" id="Cantidad" class="form-control" placeholder="Ingrese un número" name="Cantidad">
+      </div>
+      <div class="mt-4">
+          <button type="submit" class="btn btn-primary">Agregar</button>
+          <button type="reset" class="btn btn-primary">Nuevo</button>
+      </div>
         <div class="text-center">
             <img id="imagen" src="img/helldivers2.jpg" alt="Imagen" class="image-class" style="margin: 0 auto; margin-right: -1800px; height: 380px; margin-top: -350px;">
         </div>
     </div>
+  </form>
     <section class="user-table">
         <table>
             <thead>
@@ -135,9 +142,8 @@
     <footer>
       <p>WhatsApp +56 95266 2566 - Facebook - Instagram - Moneda 627, Santiago</p>
   </footer> 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+  <script src="js/bodega.js"></script>
   </body>
 </html>

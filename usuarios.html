@@ -114,18 +114,18 @@
 
                 <div class="form-group">
                     <label for="subscription">Con subscripción:</label>
-                    <select class="form-control" id="subscription" name="subscription">
-                        <option value="true">Sí</option>
-                        <option value="false">No</option>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="cliente">Si</option>
+                        <option value="administrador">No</option>
                     </select>
-                    
                 </div>
+                
                 <div class="form-group">
                     <label for="image">Imagen:</label>
                     <input class="form-control" type="file" id="image" name="image">
                 </div>
                 <label for="password">Contraseña:</label>
-                <input type="text" id="password" name="password" readonly>
+                
                 <button type="button" id="generar-contraseña">Generar contraseña</button>
                 <button type="submit">Guardar</button>
             </form>

@@ -91,4 +91,19 @@ $(document).ready(function() {
         var password = Math.random().toString(36).slice(-10);
         $("#password").val(password);
     });
+
+    // Mostrar imagen cargada
+    $("#image").on("change", function() {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#imagePreview').html('<img src="' + e.target.result + '" alt="User Image">');
+        };
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    // Botón para limpiar todos los campos
+    $("#reset-btn").click(function() {
+        $("#formulario-registro")[0].reset();
+        $('#imagePreview').html('');
+    });
 });

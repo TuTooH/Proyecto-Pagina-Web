@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+    // Configurar mensajes globales de jQuery Validate en español
+    $.extend($.validator.messages, {
+        required: "Este campo es obligatorio.",
+        email: "Por favor, introduce una dirección de correo electrónico válida.",
+        equalTo: "Por favor, introduce el mismo valor de nuevo.",
+        minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
+        maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres.")
+    });
+
     $.validator.addMethod("rutChilenoNuevo", function (value, element) {
         var rutPattern = /^\d{7,8}-[\dKk]$/;
         if (!rutPattern.test(value)) {
@@ -16,9 +25,9 @@ $(document).ready(function () {
         return regex.test(value);
     }, 'El correo es un campo requerido');
 
-    $.validator.addMethod("soloLetrasSinEspaciosNuevo", function (value, element) {
-        return this.optional(element) || /^[a-zA-Z]*$/.test(value);
-    }, "Sólo se permiten letras sin espacios en blanco.");
+    $.validator.addMethod("soloLetrasConEspaciosNuevo", function (value, element) {
+        return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
+    }, "Sólo se permiten letras y espacios en blanco.");
 
     $("#formulario-registro").validate({
         rules: {
@@ -28,11 +37,11 @@ $(document).ready(function () {
             },
             nombre: {
                 required: true,
-                soloLetrasSinEspaciosNuevo: true
+                soloLetrasConEspaciosNuevo: true
             },
             apellido: {
                 required: true,
-                soloLetrasSinEspaciosNuevo: true
+                soloLetrasConEspaciosNuevo: true
             },
             correo: {
                 required: true,
@@ -58,11 +67,11 @@ $(document).ready(function () {
             },
             nombre: {
                 required: "El nombre es un campo requerido",
-                soloLetrasSinEspaciosNuevo: "El nombre sólo puede contener letras sin espacios en blanco"
+                soloLetrasConEspaciosNuevo: "El nombre sólo puede contener letras y espacios en blanco"
             },
             apellido: {
                 required: "El apellido es un campo requerido",
-                soloLetrasSinEspaciosNuevo: "El apellido sólo puede contener letras sin espacios en blanco"
+                soloLetrasConEspaciosNuevo: "El apellido sólo puede contener letras y espacios en blanco"
             },
             correo: {
                 required: "El correo es un campo requerido",

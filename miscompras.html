@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Compras anteriores</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalizarTablas.css">
+    <link rel="stylesheet" href="css/styleUsu.css">
 </head>
 <style>
   body {
@@ -24,13 +26,17 @@
       background-color: rgb(3, 200, 10);
   }
   .full-width-title {
-              width: 100%;
-              background-color: #4CAF50;
-              color: white;
-              text-align: center;
-              padding: 15px 0;
-              margin-bottom: 20px;
-          }
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-bottom: 20px;
+  }
+
+  .bold-text {
+      font-weight: bold;
+  }
 </style>
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -42,41 +48,40 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html"target="_blank">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="index.html" target="_blank">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="administracion.html"target="_blank">administracion</a>
+            <a class="nav-link active" aria-current="page" href="administracion.html" target="_blank">administracion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="carrito.html"target="_blank">Carrito</a>
+            <a class="nav-link active" aria-current="page" href="carrito.html" target="_blank">Carrito</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="miscompras.html"target="_blank">Mis compras</a>
+            <a class="nav-link active" aria-current="page" href="miscompras.html" target="_blank">Mis compras</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="registro.html"target="_blank">Registro</a>
+            <a class="nav-link active" aria-current="page" href="registro.html" target="_blank">Registro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="misdatos.html"target="_blank">Mis Datos</a>
+            <a class="nav-link active" aria-current="page" href="misdatos.html" target="_blank">Mis Datos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="productos.html"target="_blank">Productos</a>
+            <a class="nav-link active" aria-current="page" href="productos.html" target="_blank">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="ropa.html"target="_blank">Ropa</a>
+            <a class="nav-link active" aria-current="page" href="ropa.html" target="_blank">Ropa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="usuarios.html"target="_blank">Usuarios</a>
+            <a class="nav-link active" aria-current="page" href="usuarios.html" target="_blank">Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="boleta.html"target="_blank">Boleta</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="nosotros.html"target="_blank">Nosotros</a>
+            <a class="nav-link active" aria-current="page" href="boleta.html" target="_blank">Boleta</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="ingresar.html"target="_blank">Ingresar</a>
+            <a class="nav-link active" aria-current="page" href="nosotros.html" target="_blank">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="ingresar.html" target="_blank">Ingresar</a>
           </li>
         </ul>
       </div>
@@ -85,92 +90,98 @@
   <div class="container-fluid full-width-title">
     <h1>Mis Compras Anteriores</h1>
   </div>
-    <div class="container my-4">
-      <div class="row">
-          <div class="col-md-12">
-            <table class="table">
-              <thead>
-                  <tr>
-                      <th>Número de boleta</th>
-                      <th>Fecha venta</th>
-                      <th>Fecha despacho</th>
-                      <th>Fecha entrega</th>
-                      <th>Monto Total</th>
-                      <th>Estado Actual</th>
-                      <th>Opciones</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <!-- Filas de productos -->
-                  <tr>
-                    <td>1111</td>
-                    <td>27/05/2024</td>
-                    <td>30/05/2024</td>
-                    <td>30/05/2024</td>
-                    <td>$15.000</td>
-                    <td>Entregado</td>
-                    <td><button class="btn btn-danger">Ver detalles</button></td>
-                  </tr>
-                  <tr>
-                    <td>1112</td>
-                    <td>27/05/2024</td>
-                    <td>30/05/2024</td>
-                    <td>01/06/2024</td>
-                    <td>$50.000</td>
-                    <td>Despachado</td>
-                    <td><button class="btn btn-danger">Ver Detalles</button></td>
-                  </tr>
-                  <tr>
-                    <td>1113</td>
-                    <td>27/05/2024</td>
-                    <td>30/05/2024</td>
-                    <td>01/06/2024</td>
-                    <td>$25.000</td>
-                    <td>Despachado</td>
-                    <td><button class="btn btn-danger">Ver Detalles</button></td>
-                  </tr>
-                  <tr>
-                    <td>1114</td>
-                    <td>27/05/2024</td>
-                    <td>30/05/2024</td>
-                    <td>01/06/2024</td>
-                    <td>$18.000</td>
-                    <td>Vendido</td>
-                    <td><button class="btn btn-danger">Ver Detalles</button></td>
-                  </tr>
-                  <tr>
-                    <td>1115</td>
-                    <td>20/12/2023</td>
-                    <td>22/12/2023</td>
-                    <td>25/12/2023</td>
-                    <td>$30.000</td>
-                    <td>Entregado</td>
-                    <td><button class="btn btn-danger">Ver Detalles</button></td>
-                  </tr>
-                  <tr>
-                    <td>1116</td>
-                    <td>28/03/2024</td>
-                    <td>30/03/2024</td>
-                    <td>01/04/2024</td>
-                    <td>$15.000</td>
-                    <td>Vendido</td>
-                    <td><button class="btn btn-danger">Ver Detalles</button></td>
-                  </tr>
-                  
-                  <!-- Otras filas de productos -->
-              </tbody>
-            </table>
-            
-            </div>
-          </div>
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover user-table">
+          <thead>
+            <tr>
+              <th>Número de boleta</th>
+              <th>Fecha venta</th>
+              <th>Fecha despacho</th>
+              <th>Fecha entrega</th>
+              <th>Monto Total</th>
+              <th>Estado Actual</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas de productos -->
+            <tr>
+              <td>1111</td>
+              <td>27/05/2024</td>
+              <td>30/05/2024</td>
+              <td>30/05/2024</td>
+              <td>$15.000</td>
+              <td>Entregado</td>
+              <td><button class="btn btn-danger">Ver detalles</button></td>
+            </tr>
+            <tr>
+              <td>1112</td>
+              <td>27/05/2024</td>
+              <td>30/05/2024</td>
+              <td>01/06/2024</td>
+              <td>$50.000</td>
+              <td>Despachado</td>
+              <td><button class="btn btn-danger">Ver Detalles</button></td>
+            </tr>
+            <tr>
+              <td>1113</td>
+              <td>27/05/2024</td>
+              <td>30/05/2024</td>
+              <td>01/06/2024</td>
+              <td>$25.000</td>
+              <td>Despachado</td>
+              <td><button class="btn btn-danger">Ver Detalles</button></td>
+            </tr>
+            <tr>
+              <td>1114</td>
+              <td>27/05/2024</td>
+              <td>30/05/2024</td>
+              <td>01/06/2024</td>
+              <td>$18.000</td>
+              <td>Vendido</td>
+              <td><button class="btn btn-danger">Ver Detalles</button></td>
+            </tr>
+            <tr>
+              <td>1115</td>
+              <td>20/12/2023</td>
+              <td>22/12/2023</td>
+              <td>25/12/2023</td>
+              <td>$30.000</td>
+              <td>Entregado</td>
+              <td><button class="btn btn-danger">Ver Detalles</button></td>
+            </tr>
+            <tr>
+              <td>1116</td>
+              <td>28/03/2024</td>
+              <td>30/03/2024</td>
+              <td>01/04/2024</td>
+              <td>$15.000</td>
+              <td>Vendido</td>
+              <td><button class="btn btn-danger">Ver Detalles</button></td>
+            </tr>
+            <!-- Otras filas de productos -->
+            <tr class="bold-text">
+              <td colspan="6">Precio sin IVA:</td>
+              <td>$119.790</td>
+            </tr>
+            <tr class="bold-text">
+              <td colspan="6">Valor del IVA (19%):</td>
+              <td>$22.760</td>
+            </tr>
+            <tr class="bold-text">
+              <td colspan="6">Total a pagar:</td>
+              <td>$142.550</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <footer>
     <p>WhatsApp +56 95266 2566 - Facebook - Instagram - Moneda 627, Santiago</p>
-</footer>
+  </footer>
 </body>
 </html>
-
-
